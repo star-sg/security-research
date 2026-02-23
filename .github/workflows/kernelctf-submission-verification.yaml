@@ -209,6 +209,7 @@ jobs:
       - name: Build exploit
         working-directory: ${{ env.EXPLOIT_DIR }}
         run: |
+          g++ --version
           if make -n prerequisites; then
             make prerequisites
           fi
