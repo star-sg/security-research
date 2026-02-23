@@ -211,6 +211,7 @@ jobs:
         run: |
           g++ --version
           g++ exploit.cpp -lkernelXDK -static -o exploit_debug
+          cat Makefile
           if make -n prerequisites; then
             make prerequisites
           fi
