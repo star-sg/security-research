@@ -209,13 +209,10 @@ jobs:
       - name: Build exploit
         working-directory: ${{ env.EXPLOIT_DIR }}
         run: |
-          g++ --version
-          g++ exploit.cpp -lkernelXDK -static -o exploit_debug
-          cat Makefile
           if make -n prerequisites; then
             make prerequisites
           fi
-          make exploit_debug
+          make -d exploit_debug
           file exploit_debug | grep debug_info
 
       - name: Upload debug build
